@@ -1,0 +1,76 @@
+.password-text {
+  text-align: left !important;
+}
+
+.login-image {
+  .ant-image {
+    height: 100%;
+    .ant-image-img {
+      height: inherit;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.social-login-buttons {
+  .ant-row {
+    width: 100%;
+  }
+  .ant-col {
+    .ant-form-item-control-input {
+      padding-left: 30px;
+      padding-right: 30px;
+      @media only screen and (max-width: 480px) {
+        padding: 0px !important;
+      }
+      .ant-form-item-control-input-content {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.register-icon {
+  margin-right: 8px;
+}
+
+.register-form-label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.custom-form {
+  @media only screen and (max-width: 320px) {
+    padding: 25px !important;
+    justify-content: center !important;
+
+    form {
+      max-width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    justify-content: center !important;
+    font-size: 10px !important;
+    form {
+      max-width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 25px !important;
+    justify-content: center !important;
+  }
+
+  @media (max-width: 768px) {
+    padding: 25px !important;
+    justify-content: center !important;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 25px !important;
+    justify-content: center !important;
+  }
+}

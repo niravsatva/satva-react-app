@@ -1,0 +1,72 @@
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  width: 100%;
+
+  @media only screen and (max-width: 425px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+.register-icon {
+  margin-right: 8px;
+}
+
+.register-form-label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.social-login-buttons {
+  .ant-row {
+    width: 100%;
+  }
+  .ant-col {
+    .ant-form-item-control-input {
+      padding-left: 30px;
+      padding-right: 30px;
+      @media only screen and (max-width: 480px) {
+        padding: 0px !important;
+      }
+      .ant-form-item-control-input-content {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.custom-form {
+  @media only screen and (max-width: 320px) {
+    padding: 25px !important;
+    justify-content: center !important;
+
+    form {
+      max-width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    justify-content: center !important;
+    font-size: 10px !important;
+    form {
+      max-width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 25px !important;
+    justify-content: center !important;
+  }
+
+  @media (max-width: 768px) {
+    padding: 25px !important;
+    justify-content: center !important;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 25px !important;
+    justify-content: center !important;
+  }
+}
