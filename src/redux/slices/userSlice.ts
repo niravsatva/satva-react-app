@@ -1,7 +1,7 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
-import User from "../../interfaces/User";
-import {authHandler} from "../../apis/handler/auth/index";
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import axios from 'axios';
+import User from '../../interfaces/User';
+import { authHandler } from '../../apis/handler/auth/index';
 
 export interface UserState {
   data: Array<User>;
@@ -18,10 +18,10 @@ const initialState: UserState = {
 // Actions
 
 export const getAllUsersAction: any = createAsyncThunk(
-  "users/getAllUSers",
+  'users/getAllUSers',
   async () => {
     try {
-      const users = await axios.get("http://localhost:3000/users");
+      const users = await axios.get('http://localhost:3000/users');
       return users?.data;
     } catch (err) {
       return err;
@@ -29,24 +29,26 @@ export const getAllUsersAction: any = createAsyncThunk(
   }
 );
 
-export const addUserAction: any = createAsyncThunk("users/addUser", async () => {
-  try {
+export const addUserAction: any = createAsyncThunk(
+  'users/addUser',
+  async () => {
+    try {
+      const user = await authHandler.register({
+        id: 6,
+        name: 'New User',
+        age: 25,
+        position: 'Developer',
+      });
 
-    const user = await authHandler.register({
-      id: 6,
-      name: "New User",
-      age: 25,
-      position: "Developer",
-    })
-
-     return user;
-  } catch (err) {
-    return err;
+      return user;
+    } catch (err) {
+      return err;
+    }
   }
-});
+);
 
 const UserSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -56,8 +58,8 @@ const UserSlice = createSlice({
     builder.addCase(
       getAllUsersAction.fulfilled,
       (state, action: PayloadAction<Array<User>>) => {
-        console.log("Action data: ", action?.payload);
-        console.log("State: ", state?.data);
+        console.log('Action data: ', action?.payload);
+        console.log('State: ', state?.data);
         state.isLoading = false;
         state.data = action.payload;
       }
@@ -70,7 +72,7 @@ const UserSlice = createSlice({
     builder.addCase(
       addUserAction.fulfilled,
       (state, action: PayloadAction<Array<User>>) => {
-        console.log("User:", action?.payload);
+        console.log('User:', action?.payload);
         state.data = [...state.data, action.payload] as Array<User>;
       }
     );
