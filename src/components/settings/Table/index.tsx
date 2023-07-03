@@ -1,17 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Table } from 'antd';
 import { FC } from 'react';
+import { DynamicTableProps } from './types';
 import './index.scss';
 
-interface TableProps {
-  userColumns: any;
-  userDataSource: any;
-  paginationChangeHandler: any;
-  currentPage: any;
-  totalRecords: any;
-}
-
-const index: FC<TableProps> = (props) => {
+const index: FC<DynamicTableProps> = (props) => {
   // Inits
   const {
     currentPage,

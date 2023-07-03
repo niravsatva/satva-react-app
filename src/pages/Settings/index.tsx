@@ -10,11 +10,28 @@ const Settings = () => {
   // Inits
   const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState(userDataSource.slice(0, 10));
+  const [drawerAnimation, setDrawerAnimation] = useState<boolean>(false);
+  const [isSideDrawerOpen, setSideDrawerOpen] = useState<boolean>(false);
 
   // Handle the pagination for the table
   const paginationChangeHandler = (pageNo: number) => {
     setCurrentPage(pageNo);
     setData(userDataSource.slice((pageNo - 1) * 10, pageNo * 10));
+  };
+
+  // For perform the close animation
+  const closeDrawerByAnimation = () => {
+    setDrawerAnimation(false);
+  };
+
+  // For remove from the dom
+  const removeDrawerFromDom = () => {
+    setSideDrawerOpen(false);
+  };
+  // For open the sideDrawer with animation
+  const openDrawerHandler = () => {
+    setDrawerAnimation(true);
+    setSideDrawerOpen(true);
   };
 
   // JSX
@@ -24,7 +41,7 @@ const Settings = () => {
         <SettingsLayout>
           <div className={styles.settings__body}>
             <div className={styles['settings__body--add-info']}>
-              <AddInfo />
+              <AddInfo openDrawerHandler={openDrawerHandler} />
             </div>
             <div className={styles['settings__body--table']}>
               <Table
@@ -38,7 +55,13 @@ const Settings = () => {
           </div>
         </SettingsLayout>
       </div>
-      <SideDrawerWrapper />
+      {isSideDrawerOpen && (
+        <SideDrawerWrapper
+          isOpen={drawerAnimation}
+          removeDrawerFromDom={removeDrawerFromDom}
+          closeDrawerByAnimation={closeDrawerByAnimation}
+        ></SideDrawerWrapper>
+      )}
     </>
   );
 };

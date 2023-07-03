@@ -1,11 +1,12 @@
 import { PlusOutlined } from '@ant-design/icons';
+import { Button, Col, Row } from 'antd';
 import styles from './index.module.scss';
-import { Typography, Button, Grid, Row, Col } from 'antd';
-
+import { FC } from 'react';
+import { AddInfoProps } from './types';
 // For do something to table section
-const AddInfo = () => {
+const AddInfo: FC<AddInfoProps> = (props) => {
   // Inits
-  const { Title } = Typography;
+  const { openDrawerHandler } = props;
   // JSX
   return (
     <div className={styles['add-info']}>
@@ -18,7 +19,12 @@ const AddInfo = () => {
           <h3>Hello</h3>
         </Col>
         <Col>
-          <Button type="primary" size="large" icon={<PlusOutlined />}>
+          <Button
+            type="primary"
+            size="large"
+            icon={<PlusOutlined />}
+            onClick={() => openDrawerHandler()}
+          >
             Add something
           </Button>
         </Col>
