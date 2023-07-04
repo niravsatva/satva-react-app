@@ -1,7 +1,6 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import User from '../../interfaces/User';
-import { authHandler } from '../../apis/handler/auth/index';
+import { addUserAction, getAllUsersAction } from '../actions/userActions';
 
 export interface UserState {
   data: Array<User>;
@@ -16,36 +15,6 @@ const initialState: UserState = {
 };
 
 // Actions
-
-export const getAllUsersAction: any = createAsyncThunk(
-  'users/getAllUSers',
-  async () => {
-    try {
-      const users = await axios.get('http://localhost:3000/users');
-      return users?.data;
-    } catch (err) {
-      return err;
-    }
-  }
-);
-
-export const addUserAction: any = createAsyncThunk(
-  'users/addUser',
-  async () => {
-    try {
-      const user = await authHandler.register({
-        id: 6,
-        name: 'New User',
-        age: 25,
-        position: 'Developer',
-      });
-
-      return user;
-    } catch (err) {
-      return err;
-    }
-  }
-);
 
 const UserSlice = createSlice({
   name: 'user',

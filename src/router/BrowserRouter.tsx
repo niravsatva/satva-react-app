@@ -4,12 +4,12 @@ import Register from '../pages/register';
 
 const router = createBrowserRouter([
   {
-    path: '/login',
-    element: <Login />,
+    path: '/',
+    element: <Register />,
   },
   {
-    path: '/register',
-    element: <Register />,
+    path: '/login',
+    element: <Login />,
   },
 ]);
 

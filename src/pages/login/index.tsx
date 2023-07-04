@@ -143,7 +143,7 @@ export default function Login() {
                       Sign in
                     </Button>
                   </Form.Item>
-                  <Form.Item className="social-login-buttons">
+                  <div className="social-login-buttons">
                     <Button type="primary" htmlType="submit" size="large">
                       Sign in with Intuit
                     </Button>
@@ -155,15 +155,15 @@ export default function Login() {
                     >
                       Sign in with Xero
                     </Button>
-                  </Form.Item>
+                  </div>
                   <Form.Item
                     name="remember"
                     valuePropName="checked"
                     // wrapperCol={{ offset: 8, span: 16 }}
                   >
                     <Text>Don't have an account yet?</Text>{' '}
-                    <Link to="/register">Sign up today!</Link>
                   </Form.Item>
+                  <Link to="/">Sign up today!</Link>
                 </Form>
               </Col>
             </Row>
