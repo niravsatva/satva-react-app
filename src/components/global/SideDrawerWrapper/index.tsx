@@ -10,11 +10,10 @@ const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
   // Inits
   const { children, isOpen, closeDrawerByAnimation, removeDrawerFromDom } =
     props;
-  console.log(isOpen, 'GGGGGGG');
   //for handle the key press of keyboard
   const keyPressHandler = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      console.log('Close the popup');
+      closeDrawerByAnimation();
     }
   };
 
@@ -30,6 +29,9 @@ const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
         className={`${styles['side-drawer']} ${
           isOpen ? styles['slide-in'] : styles['slide-out']
         }`}
+        onAnimationEnd={() => {
+          !isOpen && removeDrawerFromDom();
+        }}
       >
         <Row
           className={styles['side-drawer__header']}
@@ -42,7 +44,10 @@ const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
             </h4>
           </Col>
           <Col>
-            <CloseOutlined />
+            <CloseOutlined
+              className={styles['side-drawer__header--close-icon']}
+              onClick={() => closeDrawerByAnimation()}
+            />
           </Col>
         </Row>
         <div className={styles['side-drawer__body']}>{children}</div>

@@ -29,13 +29,16 @@
     animation: SlideIn 0.5s forwards;
   }
   &.slide-out {
-    animation: SlideOut 0.5s backwards;
+    animation: SlideOut 0.5s forwards;
   }
   &__header {
     padding: 2rem;
     border-bottom: 1px solid #eee;
     &--heading {
       font-size: 1.6rem;
+    }
+    &--close-icon {
+      cursor: pointer;
     }
   }
 }
