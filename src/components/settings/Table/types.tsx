@@ -8,4 +8,6 @@ export interface DynamicTableProps {
   totalRecords: number;
   performSearchHandler: (event: ChangeEvent<HTMLInputElement>) => void;
   searchValue: string;
+  showModal: () => void;
+  openDrawerHandler: () => void;
 }

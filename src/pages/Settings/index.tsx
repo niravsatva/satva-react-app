@@ -59,7 +59,7 @@ const Settings: FC = () => {
     const { value } = event.target;
     const valueRegex = new RegExp(value, 'ig');
     setSearchValue(value);
-    const searchedRecords = userDataSource.filter((singleRecord) =>
+    const searchedRecords = userDataSource.filter((singleRecord: any) =>
       valueRegex.test(singleRecord.name)
     );
     setFilterData(searchedRecords);
@@ -85,6 +85,8 @@ const Settings: FC = () => {
                 totalRecords={filteredData.length}
                 performSearchHandler={performSearchHandler}
                 searchValue={searchValue}
+                showModal={showModal}
+                openDrawerHandler={openDrawerHandler}
               />
             </div>
           </div>

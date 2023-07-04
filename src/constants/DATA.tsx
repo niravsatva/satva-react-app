@@ -3,7 +3,6 @@ export const userColumns = [
     title: 'Organization Name',
     dataIndex: 'name',
     key: 'name',
-
     sorter: (a: any, b: any) => {
       console.log(a.name);
       return a.name.length - b.name.length;
@@ -31,176 +30,23 @@ export const userColumns = [
     key: 'action',
   },
 ];
-export const userDataSource = [
-  {
-    name: 'Company 1',
-    email: 'hello @ gmail.com',
+const userDataSource: any = [];
+userDataSource.push({
+  name: `Demo`,
+  email: `hello  @ gmail.com`,
+  phone: 7874445547,
+  created: `some date`,
+  action: `some action`,
+});
+for (let index = 0; index < 24; index++) {
+  userDataSource.push({
+    name: `Company ${index}`,
+    email: `hello ${index} @ gmail.com`,
     phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 2',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 3',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 4',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 5',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 6',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 7',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 8',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 9',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 10',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 11',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 12',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 13',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 14',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 15',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 16',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 17',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 18',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 19',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 20',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 21',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 22',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 23',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-  {
-    name: 'Company 24',
-    email: 'hello @ gmail.com',
-    phone: 7874445547,
-    created: 'some date',
-    action: 'some action',
-  },
-];
+    created: `some date`,
+    action: `some action`,
+  });
+}
 
 export const userDrawerBody = {
   userFields: [
@@ -242,3 +88,5 @@ export const userDrawerBody = {
     },
   ],
 };
+
+export { userDataSource };

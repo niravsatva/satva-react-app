@@ -23,7 +23,7 @@ const SearchAndFilter: FC<SearchAndFilterProps> = (props) => {
           <Col>
             <Space>
               <Input
-                placeholder="default size"
+                placeholder="Search user"
                 suffix={<SearchOutlined />}
                 onChange={performSearchHandler}
                 value={searchValue}
