@@ -26,7 +26,7 @@ const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
   return (
     <>
       <div
-        className={`${styles['side-drawer']} ${
+        className={`${'stop-scroll-x'} ${styles['side-drawer']} ${
           isOpen ? styles['slide-in'] : styles['slide-out']
         }`}
         onAnimationEnd={() => {
@@ -46,7 +46,7 @@ const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
           <Col>
             <CloseOutlined
               className={styles['side-drawer__header--close-icon']}
-              onClick={() => closeDrawerByAnimation()}
+              onClick={closeDrawerByAnimation}
             />
           </Col>
         </Row>
