@@ -3,4 +3,5 @@ export interface SideDrawerProps {
   isOpen: boolean;
   closeDrawerByAnimation: () => void;
   removeDrawerFromDom: () => void;
+  headerTitle: string;
 }

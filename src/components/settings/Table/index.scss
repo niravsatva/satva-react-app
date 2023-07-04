@@ -9,13 +9,17 @@
     .ant-pagination-item-active {
       border-color: #000;
       background-color: #000;
-      &:hover{
+      &:hover {
         border: none !important;
         border-width: 0px !important;
       }
-      a{
+      a {
         color: #fff !important;
       }
     }
+  }
+  .table-edit-icon,
+  .table-delete-icon {
+    cursor: pointer;
   }
 }
