@@ -5,6 +5,7 @@ import {
   UserOutlined,
   PhoneOutlined,
 } from '@ant-design/icons';
+import * as Icon from '@ant-design/icons';
 import {
   Col,
   Row,
@@ -16,6 +17,7 @@ import {
   Input,
   Typography,
 } from 'antd';
+import { registerFormData } from 'constants/DATA';
 
 import { Link } from 'react-router-dom';
 import './index.scss';
@@ -84,7 +86,31 @@ export default function Register() {
                     registration
                   </Title>
                   <div className="grid-container">
-                    <div className="grid-item">
+                    {registerFormData?.map((item) => {
+                      return (
+                        <div className="grid-item">
+                          <label className="register-form-label">
+                            {item?.icon}
+                            {item?.title} {item?.required && '*'}
+                          </label>
+                          <Form.Item name={item?.name} rules={item?.rules}>
+                            {item?.type == 'password' ? (
+                              <Input.Password
+                                placeholder={item?.placeholder}
+                                size="large"
+                              />
+                            ) : (
+                              <Input
+                                placeholder={item?.placeholder}
+                                size="large"
+                              />
+                            )}
+                          </Form.Item>
+                        </div>
+                      );
+                    })}
+
+                    {/* <div className="grid-item">
                       <label className="register-form-label">
                         <UserOutlined className="register-icon" />
                         First Name *
@@ -200,7 +226,7 @@ export default function Register() {
                           size="large"
                         />
                       </Form.Item>
-                    </div>
+                    </div> */}
                   </div>
 
                   <Form.Item>
