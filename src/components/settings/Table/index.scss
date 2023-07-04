@@ -1,0 +1,21 @@
+.dynamic-table {
+  height: calc(100vh - 184px);
+  overflow: auto;
+  &__pagination {
+    justify-content: center !important;
+    .ant-pagination-item {
+      border-radius: 50%;
+    }
+    .ant-pagination-item-active {
+      border-color: #000;
+      background-color: #000;
+      &:hover{
+        border: none !important;
+        border-width: 0px !important;
+      }
+      a{
+        color: #fff !important;
+      }
+    }
+  }
+}

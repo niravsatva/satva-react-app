@@ -1,0 +1,10 @@
+.settings {
+  height: 100vh;
+  &__body {
+    &--table {
+      margin-bottom: 1.5rem;
+      background: white;
+    }
+    
+  }
+}
