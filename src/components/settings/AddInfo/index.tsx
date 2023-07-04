@@ -16,7 +16,7 @@ const AddInfo: FC<AddInfoProps> = (props) => {
         align={'middle'}
       >
         <Col>
-          <h3>Hello</h3>
+          <h3>Users</h3>
         </Col>
         <Col>
           <Button
@@ -25,7 +25,7 @@ const AddInfo: FC<AddInfoProps> = (props) => {
             icon={<PlusOutlined />}
             onClick={() => openDrawerHandler()}
           >
-            Add something
+            Add User
           </Button>
         </Col>
       </Row>

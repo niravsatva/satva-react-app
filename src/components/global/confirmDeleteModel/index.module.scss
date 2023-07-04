@@ -1,0 +1,15 @@
+.confirm-delete-model {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  .delete-icon {
+    font-size: 7rem;
+    color: red;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    font-size: 2rem;
+  }
+}

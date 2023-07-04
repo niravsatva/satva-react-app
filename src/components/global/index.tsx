@@ -1,3 +1,3 @@
 import SideDrawerWrapper from './SideDrawerWrapper';
-
-export { SideDrawerWrapper };
+import ConfirmDelete from './confirmDeleteModel';
+export { SideDrawerWrapper, ConfirmDelete };

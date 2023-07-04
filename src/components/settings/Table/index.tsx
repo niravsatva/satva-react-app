@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Table } from 'antd';
+import { SearchAndFilter } from 'components/settings';
 import { FC } from 'react';
-import { DynamicTableProps } from './types';
 import './index.scss';
+import { DynamicTableProps } from './types';
 
-const index: FC<DynamicTableProps> = (props) => {
+const DynamicTable: FC<DynamicTableProps> = (props) => {
   // Inits
   const {
     currentPage,
@@ -12,10 +13,16 @@ const index: FC<DynamicTableProps> = (props) => {
     totalRecords,
     userColumns,
     userDataSource,
+    performSearchHandler,
+    searchValue,
   } = props;
   // JSX
   return (
     <div className={'dynamic-table'}>
+      <SearchAndFilter
+        performSearchHandler={performSearchHandler}
+        searchValue={searchValue}
+      />
       <Table
         dataSource={userDataSource}
         columns={userColumns}
@@ -30,4 +37,4 @@ const index: FC<DynamicTableProps> = (props) => {
   );
 };
 
-export default index;
+export default DynamicTable;

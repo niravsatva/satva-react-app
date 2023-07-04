@@ -8,8 +8,13 @@ import { Row, Col } from 'antd';
 // Created the wrapper for the side drawer
 const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
   // Inits
-  const { children, isOpen, closeDrawerByAnimation, removeDrawerFromDom } =
-    props;
+  const {
+    children,
+    isOpen,
+    closeDrawerByAnimation,
+    removeDrawerFromDom,
+    headerTitle,
+  } = props;
   //for handle the key press of keyboard
   const keyPressHandler = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
@@ -40,7 +45,7 @@ const SideDrawerWrapper: FC<SideDrawerProps> = (props) => {
         >
           <Col>
             <h4 className={styles['side-drawer__header--heading']}>
-              ADD Something
+              {headerTitle}
             </h4>
           </Col>
           <Col>
