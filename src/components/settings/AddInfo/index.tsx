@@ -6,7 +6,13 @@ import { AddInfoProps } from './types';
 // For do something to table section
 const AddInfo: FC<AddInfoProps> = (props) => {
   // Inits
-  const { openDrawerHandler } = props;
+  const { openDrawerHandler, setDrawerInfoHandler } = props;
+
+  // For add the userData
+  const addUserHandler = () => {
+    openDrawerHandler();
+    setDrawerInfoHandler('Add user');
+  };
   // JSX
   return (
     <div className={styles['add-info']}>
@@ -23,7 +29,7 @@ const AddInfo: FC<AddInfoProps> = (props) => {
             type="primary"
             size="large"
             icon={<PlusOutlined />}
-            onClick={() => openDrawerHandler()}
+            onClick={addUserHandler}
           >
             Add User
           </Button>

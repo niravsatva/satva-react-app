@@ -10,4 +10,5 @@ export interface DynamicTableProps {
   searchValue: string;
   showModal: () => void;
   openDrawerHandler: () => void;
+  setDrawerInfoHandler: (title: string) => void;
 }
