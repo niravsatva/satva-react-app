@@ -17,6 +17,9 @@ const Settings: FC = () => {
   const [isSideDrawerOpen, setSideDrawerOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const [drawerInfo, setDrawerInfo] = useState({
+    drawerTitle: 'Add user',
+  });
 
   //   For open the model
   const showModal = () => {
@@ -67,6 +70,11 @@ const Settings: FC = () => {
     setCurrentPage(1);
   };
 
+  // For change the data and title between components
+  const setDrawerInfoHandler = (drawerTitle: any) => {
+    setDrawerInfo({ drawerTitle });
+  };
+
   // JSX
   return (
     <>
@@ -74,7 +82,10 @@ const Settings: FC = () => {
         <SettingsLayout>
           <div className={styles.settings__body}>
             <div className={styles['settings__body--add-info']}>
-              <AddInfo openDrawerHandler={openDrawerHandler} />
+              <AddInfo
+                openDrawerHandler={openDrawerHandler}
+                setDrawerInfoHandler={setDrawerInfoHandler}
+              />
             </div>
             <div className={styles['settings__body--table']}>
               <DynamicTable
@@ -87,6 +98,7 @@ const Settings: FC = () => {
                 searchValue={searchValue}
                 showModal={showModal}
                 openDrawerHandler={openDrawerHandler}
+                setDrawerInfoHandler={setDrawerInfoHandler}
               />
             </div>
           </div>
@@ -97,7 +109,7 @@ const Settings: FC = () => {
           isOpen={drawerAnimation}
           removeDrawerFromDom={removeDrawerFromDom}
           closeDrawerByAnimation={closeDrawerByAnimation}
-          headerTitle="Add user"
+          headerTitle={drawerInfo.drawerTitle}
         >
           <SideDrawerBody closeDrawerByAnimation={closeDrawerByAnimation} />
         </SideDrawerWrapper>

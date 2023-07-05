@@ -18,7 +18,14 @@ const DynamicTable: FC<DynamicTableProps> = (props) => {
     searchValue,
     showModal,
     openDrawerHandler,
+    setDrawerInfoHandler,
   } = props;
+
+  const editDataHandler = () => {
+    openDrawerHandler();
+    setDrawerInfoHandler('Edit User');
+  };
+
   // JSX
   return (
     <div className={'dynamic-table'}>
@@ -53,7 +60,7 @@ const DynamicTable: FC<DynamicTableProps> = (props) => {
             <Space size={10}>
               <EditOutlined
                 className="table-edit-icon"
-                onClick={openDrawerHandler}
+                onClick={editDataHandler}
               />
               <DeleteOutlined
                 className="table-delete-icon"
