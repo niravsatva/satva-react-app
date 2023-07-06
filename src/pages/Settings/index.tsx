@@ -2,11 +2,17 @@ import { Col, Row } from 'antd';
 import { ConfirmDelete, SideDrawerWrapper } from 'components/global';
 import { AddInfo, DynamicTable, SideDrawerBody } from 'components/settings';
 import IntegrationCard from 'components/settings/IntegrationCard';
-import { integrationsCards, userColumns, userDataSource } from 'constants/DATA';
+import {
+  integrationsCards,
+  preferencesData,
+  userColumns,
+  userDataSource,
+} from 'constants/DATA';
 import { SettingsLayout } from 'layout';
 import { MenuInfo } from 'rc-menu/lib/interface';
 import { ChangeEvent, FC, useState } from 'react';
 import styles from './index.module.scss';
+import PreferenceCard from 'components/settings/PreferenceCard';
 
 // settings page
 const Settings: FC = () => {
@@ -151,6 +157,13 @@ const Settings: FC = () => {
                     );
                   })}
                 </Row>
+              </div>
+            )}
+            {settingComponent === 'preference' && (
+              <div className={styles.integrations__container}>
+                {preferencesData?.map((preference) => (
+                  <PreferenceCard preference={preference} />
+                ))}
               </div>
             )}
           </div>

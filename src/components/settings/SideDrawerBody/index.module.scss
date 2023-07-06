@@ -1,6 +1,6 @@
 .side-drawer-body {
   height: 100%;
-  padding: 1rem;
+  padding: 3.4rem;
   .side-drawer-form {
     height: 100%;
     display: flex;
@@ -10,7 +10,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 1rem;
-      row-gap: 2rem;
+      // row-gap: 2rem;
     }
 
     &__buttons {
