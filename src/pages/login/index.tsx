@@ -141,7 +141,7 @@ export default function Login() {
                       Sign in
                     </Button>
                   </Form.Item>
-                  <div className="social-login-buttons">
+                  <Form.Item className="social-login-buttons">
                     <Button type="primary" htmlType="submit" size="large">
                       Sign in with Intuit
                     </Button>
@@ -153,7 +153,7 @@ export default function Login() {
                     >
                       Sign in with Xero
                     </Button>
-                  </div>
+                  </Form.Item>
                   <Form.Item
                     name="remember"
                     valuePropName="checked"
