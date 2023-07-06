@@ -208,3 +208,54 @@ export const registerFormData = [
     ],
   },
 ];
+
+export const integrationsCards = [
+  {
+    title: 'Connect With Quickbooks Online',
+    buttonText: 'Connect to Quickbooks',
+    logo: '/assets/images/quickbooks_logo.png',
+    ghost: false,
+  },
+  {
+    title: 'Connect With ZohoBooks',
+    buttonText: 'Connect',
+    logo: '/assets/images/zohobooks_logo.png',
+    ghost: false,
+  },
+  {
+    title: 'Connect With Xero',
+    buttonText: 'Connect to Xero',
+    logo: '/assets/images/xero_logo.png',
+    ghost: false,
+  },
+  {
+    title: 'Connect With NetSuite',
+    buttonText: 'Connect',
+    logo: '/assets/images/oracle_logo.png',
+    ghost: false,
+  },
+  {
+    title: 'Connect With Sage',
+    buttonText: 'Connect',
+    logo: '/assets/images/sage_logo.png',
+    ghost: true,
+  },
+  {
+    title: 'Connect With ClearBooks',
+    buttonText: 'Connect',
+    logo: '/assets/images/clearbooks_logo.png',
+    ghost: true,
+  },
+  {
+    title: 'Connect With Business Central',
+    buttonText: 'Connect',
+    logo: '/assets/images/business_central_logo.png',
+    ghost: true,
+  },
+  {
+    title: 'Connect With FreshBooks',
+    buttonText: 'Connect',
+    logo: '/assets/images/freshbooks_logo.png',
+    ghost: false,
+  },
+];
