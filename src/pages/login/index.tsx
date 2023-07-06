@@ -49,11 +49,7 @@ export default function Login() {
           <Content style={contentStyle}>
             <Row justify="space-around" style={{ height: '100vh' }}>
               <Col xs={24} sm={24} md={10} lg={10} className="login-image">
-                <Image
-                  src="/assets/images/login.jpg"
-                  width={'100%'}
-                  preview={false}
-                />
+                <Image src="/assets/images/login.jpg" preview={false} />
               </Col>
               <Col
                 xs={24}

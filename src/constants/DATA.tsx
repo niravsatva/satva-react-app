@@ -213,49 +213,244 @@ export const integrationsCards = [
   {
     title: 'Connect With Quickbooks Online',
     buttonText: 'Connect to Quickbooks',
-    logo: '/assets/images/quickbooks_logo.png',
+    logo: '/assets/images/logos/quickbooks_logo.png',
     ghost: false,
   },
   {
     title: 'Connect With ZohoBooks',
     buttonText: 'Connect',
-    logo: '/assets/images/zohobooks_logo.png',
+    logo: '/assets/images/logos/zohobooks_logo.png',
     ghost: false,
   },
   {
     title: 'Connect With Xero',
     buttonText: 'Connect to Xero',
-    logo: '/assets/images/xero_logo.png',
+    logo: '/assets/images/logos/xero_logo.png',
     ghost: false,
   },
   {
     title: 'Connect With NetSuite',
     buttonText: 'Connect',
-    logo: '/assets/images/oracle_logo.png',
+    logo: '/assets/images/logos/oracle_logo.png',
     ghost: false,
   },
   {
     title: 'Connect With Sage',
     buttonText: 'Connect',
-    logo: '/assets/images/sage_logo.png',
+    logo: '/assets/images/logos/sage_logo.png',
     ghost: true,
   },
   {
     title: 'Connect With ClearBooks',
     buttonText: 'Connect',
-    logo: '/assets/images/clearbooks_logo.png',
+    logo: '/assets/images/logos/clearbooks_logo.png',
     ghost: true,
   },
   {
     title: 'Connect With Business Central',
     buttonText: 'Connect',
-    logo: '/assets/images/business_central_logo.png',
+    logo: '/assets/images/logos/business_central_logo.png',
     ghost: true,
   },
   {
     title: 'Connect With FreshBooks',
     buttonText: 'Connect',
-    logo: '/assets/images/freshbooks_logo.png',
+    logo: '/assets/images/logos/freshbooks_logo.png',
     ghost: false,
+  },
+];
+
+export const preferencesData = [
+  {
+    title: 'Simply Dummy Preference 1',
+    status: true,
+    preferences: [
+      {
+        title: 'Preference 1',
+        status: true,
+      },
+      {
+        title: 'Preference 2',
+        status: true,
+      },
+      {
+        title: 'Preference 3',
+        status: true,
+      },
+      {
+        title: 'Preference 4',
+        status: false,
+      },
+      {
+        title: 'Preference 5',
+        status: false,
+      },
+      {
+        title: 'Preference 6',
+        status: true,
+      },
+      {
+        title: 'Preference 7',
+        status: true,
+      },
+      {
+        title: 'Preference 8',
+        status: false,
+      },
+      {
+        title: 'Preference 9',
+        status: true,
+      },
+      {
+        title: 'Preference 10',
+        status: true,
+      },
+      {
+        title: 'Preference 11',
+        status: false,
+      },
+      {
+        title: 'Preference 12',
+        status: true,
+      },
+    ],
+  },
+  {
+    title: 'Simply Dummy Preference 2',
+    status: false,
+    preferences: [
+      {
+        title: 'Preference 1',
+        status: false,
+      },
+      {
+        title: 'Preference 2',
+        status: false,
+      },
+      {
+        title: 'Preference 3',
+        status: true,
+      },
+      {
+        title: 'Preference 4',
+        status: true,
+      },
+      {
+        title: 'Preference 5',
+        status: true,
+      },
+      {
+        title: 'Preference 6',
+        status: true,
+      },
+      {
+        title: 'Preference 7',
+        status: true,
+      },
+      {
+        title: 'Preference 8',
+        status: false,
+      },
+      {
+        title: 'Preference 9',
+        status: true,
+      },
+    ],
+  },
+  {
+    title: 'Simply Dummy Preference 1',
+    status: true,
+    preferences: [
+      {
+        title: 'Preference 1',
+        status: true,
+      },
+      {
+        title: 'Preference 2',
+        status: true,
+      },
+      {
+        title: 'Preference 3',
+        status: true,
+      },
+      {
+        title: 'Preference 4',
+        status: false,
+      },
+      {
+        title: 'Preference 5',
+        status: false,
+      },
+      {
+        title: 'Preference 6',
+        status: true,
+      },
+      {
+        title: 'Preference 7',
+        status: true,
+      },
+      {
+        title: 'Preference 8',
+        status: false,
+      },
+      {
+        title: 'Preference 9',
+        status: true,
+      },
+      {
+        title: 'Preference 10',
+        status: true,
+      },
+      {
+        title: 'Preference 11',
+        status: false,
+      },
+      {
+        title: 'Preference 12',
+        status: true,
+      },
+    ],
+  },
+  {
+    title: 'Simply Dummy Preference 2',
+    status: false,
+    preferences: [
+      {
+        title: 'Preference 1',
+        status: false,
+      },
+      {
+        title: 'Preference 2',
+        status: false,
+      },
+      {
+        title: 'Preference 3',
+        status: true,
+      },
+      {
+        title: 'Preference 4',
+        status: true,
+      },
+      {
+        title: 'Preference 5',
+        status: true,
+      },
+      {
+        title: 'Preference 6',
+        status: true,
+      },
+      {
+        title: 'Preference 7',
+        status: true,
+      },
+      {
+        title: 'Preference 8',
+        status: false,
+      },
+      {
+        title: 'Preference 9',
+        status: true,
+      },
+    ],
   },
 ];
