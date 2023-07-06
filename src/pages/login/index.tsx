@@ -118,10 +118,8 @@ export default function Login() {
                         placeholder="Type your password"
                         size="large"
                       />
-                      <Text type="secondary">
-                        Must be 8 characters at least
-                      </Text>
                     </Form.Item>
+                    <Text type="secondary">Must be 8 characters at least</Text>
                   </div>
 
                   <Row justify="space-between">

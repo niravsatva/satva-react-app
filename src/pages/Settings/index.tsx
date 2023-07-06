@@ -1,10 +1,12 @@
-import { SideDrawerWrapper } from 'components/global';
+import { Col, Row } from 'antd';
+import { ConfirmDelete, SideDrawerWrapper } from 'components/global';
 import { AddInfo, DynamicTable, SideDrawerBody } from 'components/settings';
-import { userColumns, userDataSource } from 'constants/DATA';
+import IntegrationCard from 'components/settings/IntegrationCard';
+import { integrationsCards, userColumns, userDataSource } from 'constants/DATA';
 import { SettingsLayout } from 'layout';
-import { useState, ChangeEvent, FC } from 'react';
+import { MenuInfo } from 'rc-menu/lib/interface';
+import { ChangeEvent, FC, useState } from 'react';
 import styles from './index.module.scss';
-import { ConfirmDelete } from 'components/global';
 
 // settings page
 const Settings: FC = () => {
@@ -20,6 +22,14 @@ const Settings: FC = () => {
   const [drawerInfo, setDrawerInfo] = useState({
     drawerTitle: 'Add user',
   });
+  const [settingComponent, setSettingComponent] = useState('users');
+  const [viewconnection, setViewConnection] = useState(false);
+
+  // Sidebar item click handler
+  const handleSidebar = (event: MenuInfo) => {
+    console.log('Event: ', event);
+    setSettingComponent(event?.key);
+  };
 
   //   For open the model
   const showModal = () => {
@@ -75,32 +85,74 @@ const Settings: FC = () => {
     setDrawerInfo({ drawerTitle });
   };
 
+  // If add functionality required for the component or not
+  const getAdd = () => {
+    if (
+      settingComponent === 'users' ||
+      settingComponent === 'organization' ||
+      settingComponent === 'roles'
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   // JSX
   return (
     <>
       <div className={styles.settings}>
-        <SettingsLayout>
+        <SettingsLayout handleSidebar={handleSidebar}>
           <div className={styles.settings__body}>
             <div className={styles['settings__body--add-info']}>
               <AddInfo
                 openDrawerHandler={openDrawerHandler}
                 setDrawerInfoHandler={setDrawerInfoHandler}
+                title={settingComponent}
+                addInfo={getAdd()}
               />
             </div>
-            <div className={styles['settings__body--table']}>
-              <DynamicTable
-                userDataSource={data}
-                userColumns={userColumns}
-                paginationChangeHandler={paginationChangeHandler}
-                currentPage={currentPage}
-                totalRecords={filteredData.length}
-                performSearchHandler={performSearchHandler}
-                searchValue={searchValue}
-                showModal={showModal}
-                openDrawerHandler={openDrawerHandler}
-                setDrawerInfoHandler={setDrawerInfoHandler}
-              />
-            </div>
+            {settingComponent === 'users' && (
+              <div className={styles['settings__body--table']}>
+                <DynamicTable
+                  userDataSource={data}
+                  userColumns={userColumns}
+                  paginationChangeHandler={paginationChangeHandler}
+                  currentPage={currentPage}
+                  totalRecords={filteredData.length}
+                  performSearchHandler={performSearchHandler}
+                  searchValue={searchValue}
+                  showModal={showModal}
+                  openDrawerHandler={openDrawerHandler}
+                  setDrawerInfoHandler={setDrawerInfoHandler}
+                />
+              </div>
+            )}
+            {settingComponent === 'integrations' && (
+              <div className={styles.integrations__container}>
+                <Row gutter={16}>
+                  {integrationsCards?.map((card) => {
+                    return (
+                      <Col
+                        className="gutter-row"
+                        xl={6}
+                        lg={6}
+                        md={12}
+                        sm={12}
+                        xs={24}
+                      >
+                        <IntegrationCard
+                          title={card?.title}
+                          buttonText={card?.buttonText}
+                          logo={card?.logo}
+                          ghost={card?.ghost}
+                        />
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </div>
+            )}
           </div>
         </SettingsLayout>
       </div>

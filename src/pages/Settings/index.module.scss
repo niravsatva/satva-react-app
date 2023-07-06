@@ -5,6 +5,12 @@
       margin-bottom: 1.5rem;
       background: white;
     }
-    
+  }
+}
+
+.integrations {
+  &__container {
+    height: calc(100vh - 125px) !important;
+    overflow-y: scroll;
   }
 }

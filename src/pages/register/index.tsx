@@ -1,23 +1,16 @@
-import React, { ChangeEvent, useState } from 'react';
 import {
-  MailOutlined,
-  LockOutlined,
-  UserOutlined,
-  PhoneOutlined,
-} from '@ant-design/icons';
-import * as Icon from '@ant-design/icons';
-import {
-  Col,
-  Row,
-  Image,
-  Layout,
-  Space,
   Button,
+  Col,
   Form,
+  Image,
   Input,
+  Layout,
+  Row,
+  Space,
   Typography,
 } from 'antd';
 import { registerFormData } from 'constants/DATA';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 import './index.scss';

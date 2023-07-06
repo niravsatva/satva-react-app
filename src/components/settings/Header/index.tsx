@@ -10,7 +10,7 @@ const Header = () => {
     <div className={styles.header}>
       <Header
         style={{
-          background: '#eee',
+          background: '#fff',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',

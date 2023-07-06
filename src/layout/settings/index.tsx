@@ -4,14 +4,14 @@ import styles from './index.module.scss';
 // General layout for settings page
 const Settings = (props: any) => {
   // Inits
-  const { children }: any = props;
+  const { children, handleSidebar }: any = props;
   // JSX
   return (
     <>
       <Header />
       <Layout hasSider={true} className={styles.layout}>
         <div className={styles.layout__sidebar}>
-          <Sidebar />
+          <Sidebar handleSidebar={handleSidebar} />
         </div>
         <div className={styles.layout__body}>{children}</div>
       </Layout>

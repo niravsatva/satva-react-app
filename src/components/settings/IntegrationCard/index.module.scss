@@ -1,0 +1,14 @@
+.integration {
+  &__card {
+    margin-bottom: 15px;
+    width: 100%;
+    img {
+      height: 100px !important;
+      max-width: 100% !important;
+    }
+    &__company {
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+}
