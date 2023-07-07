@@ -1,4 +1,4 @@
-export interface SideDrawerProps {
+export type SideDrawerProps = {
   children?: any;
   isOpen: boolean;
   closeDrawerByAnimation: () => void;

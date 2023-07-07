@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 
-export interface DynamicTableProps {
+export type DynamicTableProps = {
   userColumns: any;
   userDataSource: any;
   paginationChangeHandler: (pageNo: number) => void;

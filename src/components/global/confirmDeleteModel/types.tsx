@@ -1,4 +1,4 @@
-export interface ConfirmDeleteProps {
+export type ConfirmDeleteProps = {
   isModalOpen: boolean;
   handleOk: () => void;
   handleCancel: () => void;

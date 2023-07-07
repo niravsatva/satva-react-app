@@ -10,7 +10,7 @@ import {
 } from 'constants/DATA';
 import { SettingsLayout } from 'layout';
 import { MenuInfo } from 'rc-menu/lib/interface';
-import { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 import styles from './index.module.scss';
 import PreferenceCard from 'components/settings/PreferenceCard';
 
@@ -29,7 +29,6 @@ const Settings: FC = () => {
     drawerTitle: 'Add user',
   });
   const [settingComponent, setSettingComponent] = useState('users');
-  const [viewconnection, setViewConnection] = useState(false);
 
   // Sidebar item click handler
   const handleSidebar = (event: MenuInfo) => {
@@ -137,9 +136,10 @@ const Settings: FC = () => {
             {settingComponent === 'integrations' && (
               <div className={styles.integrations__container}>
                 <Row gutter={16}>
-                  {integrationsCards?.map((card) => {
+                  {integrationsCards?.map((card, index) => {
                     return (
                       <Col
+                        key={index}
                         className="gutter-row"
                         xl={6}
                         lg={6}
@@ -161,8 +161,10 @@ const Settings: FC = () => {
             )}
             {settingComponent === 'preference' && (
               <div className={styles.integrations__container}>
-                {preferencesData?.map((preference) => (
-                  <PreferenceCard preference={preference} />
+                {preferencesData?.map((preference, index) => (
+                  <React.Fragment key={index}>
+                    <PreferenceCard preference={preference} />
+                  </React.Fragment>
                 ))}
               </div>
             )}

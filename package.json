@@ -29,12 +29,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix src/**/*.ts src/**/*.tsx"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "react-hooks"
     ]
   },
   "browserslist": {
@@ -50,6 +52,10 @@
     ]
   },
   "devDependencies": {
-    "@types/yup": "^0.32.0"
+    "@types/yup": "^0.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2"
   }
 }

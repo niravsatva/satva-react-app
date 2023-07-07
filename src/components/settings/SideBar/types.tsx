@@ -1,3 +1,3 @@
-export interface SidebarProps {
+export type SidebarProps = {
   handleSidebar: () => void;
 }

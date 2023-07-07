@@ -56,7 +56,7 @@ const DynamicTable: FC<DynamicTableProps> = (props) => {
           title="Action"
           dataIndex="action"
           key="action"
-          render={(_, record) => (
+          render={() => (
             <Space size={10}>
               <EditOutlined
                 className="table-edit-icon"
