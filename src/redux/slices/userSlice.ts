@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import User from '../../interfaces/User';
 import { addUserAction, getAllUsersAction } from '../actions/userActions';
 
-export interface UserState {
+export type UserState = {
   data: Array<User>;
   isLoading: boolean;
   error: string | null | any;

@@ -1,4 +1,4 @@
-export interface requestInterface {
+export type requestInterface = {
   url: string;
   method: string;
   params?: any;
@@ -24,6 +24,6 @@ export interface requestInterface {
   };
 }
 
-export interface blankObject {
+export type blankObject = {
   [key: string]: any;
 }

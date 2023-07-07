@@ -1,12 +1,24 @@
 import toast from 'react-hot-toast';
-enum ToastType {
-  success,
-}
+
+// type ToastHandler = (message: string) => string;
 
 export const toastText = (message: string, type: string) => {
-  toast['success'](message, {
-    style: {
-      fontSize: '16px',
-    },
-  });
+  switch (type) {
+    case 'success':
+      toast.success(message, {
+        style: {
+          fontSize: '16px',
+        },
+      });
+
+      break;
+
+    case 'error':
+      toast.error(message, {
+        style: {
+          fontSize: '16px',
+        },
+      });
+      break;
+  }
 };

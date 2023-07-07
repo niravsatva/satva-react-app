@@ -1,6 +1,6 @@
 import { SearchOutlined } from '@ant-design/icons';
 import { Col, Input, Row, Space, InputNumber, Select } from 'antd';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import styles from './index.module.scss';
 import { SearchAndFilterProps } from './types';
 // For search filter and paginate
@@ -13,12 +13,7 @@ const SearchAndFilter: FC<SearchAndFilterProps> = (props) => {
       <div className={styles['search-filter__wrapper']}>
         <Row justify={'space-between'}>
           <Col>
-            <InputNumber
-              min={10}
-              max={15}
-              defaultValue={10}
-              onChange={() => {}}
-            />
+            <InputNumber min={10} max={15} defaultValue={10} />
           </Col>
           <Col>
             <Space>
@@ -31,7 +26,6 @@ const SearchAndFilter: FC<SearchAndFilterProps> = (props) => {
               <Select
                 defaultValue="filterOne"
                 style={{ width: 200 }}
-                onChange={() => {}}
                 options={[
                   { label: 'Filter One', value: 'filterOne' },
                   { label: 'Filter Second', value: 'filterSecond' },

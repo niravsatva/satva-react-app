@@ -1,4 +1,4 @@
-interface User {
+type User = {
   id: number;
   name: string;
   age: number;

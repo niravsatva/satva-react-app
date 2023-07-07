@@ -1,6 +1,6 @@
-import { ResponseStatus } from "../interfaces/enum";
+import { ResponseStatus } from '../interfaces/enum';
 
-export class commanResponse {
+export class commonResponse {
   public ResponseStatus!: ResponseStatus;
   public Result!: any;
   public Message!: string;

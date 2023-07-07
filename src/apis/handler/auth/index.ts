@@ -1,4 +1,4 @@
-import { commanResponse } from '../../utils/models/commonResponse';
+import { commonResponse } from '../../utils/models/commonResponse';
 import * as Yup from 'yup';
 import { ResponseStatus } from '../../utils/interfaces/enum';
 import { POST } from '../../utils/Requests';
@@ -8,10 +8,10 @@ export const authHandler = {
 };
 async function register(object: any) {
   try {
-    let responseOBJ: commanResponse = new commanResponse();
+    const responseOBJ: commonResponse = new commonResponse();
 
     //schema for payload
-    let registerSchema = Yup.object({
+    const registerSchema = Yup.object({
       name: Yup.string().required().min(3).max(30),
       email: Yup.string().email('Not a proper email').required(),
       password: Yup.string()
@@ -35,7 +35,6 @@ async function register(object: any) {
         .validate(object)
         .catch((e: any) => e.message);
     }
-    console.log('vvacerrsdf');
     return responseOBJ;
   } catch (error) {
     console.log('error From controller::>', error);

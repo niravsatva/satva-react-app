@@ -1,7 +1,6 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { authHandler } from '../../apis/handler/auth/index';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import { GET } from 'apis/utils/Requests';
+import { authHandler } from '../../apis/handler/auth/index';
 
 export const getAllUsersAction: any = createAsyncThunk(
   'users/getAllUSers',

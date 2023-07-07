@@ -37,7 +37,11 @@
   }
 }
 
-.custom-form {
+.custom-register-form {
+  form {
+    width: 740px;
+  }
+
   @media only screen and (max-width: 320px) {
     padding: 25px !important;
     justify-content: center !important;

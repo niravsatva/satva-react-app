@@ -83,7 +83,13 @@ export default function Login() {
                       rules={[
                         {
                           required: true,
-                          message: 'Please input your email!',
+                          message: 'Please input your email address!',
+                          validateTrigger: 'onSubmit',
+                        },
+                        {
+                          type: 'email',
+                          message: 'The input is not valid E-mail!',
+                          validateTrigger: 'onSubmit',
                         },
                       ]}
                     >
@@ -105,6 +111,7 @@ export default function Login() {
                         {
                           required: true,
                           message: 'Please input your password!',
+                          validateTrigger: 'onSubmit',
                         },
                       ]}
                       labelAlign="left"
@@ -155,9 +162,9 @@ export default function Login() {
                     valuePropName="checked"
                     // wrapperCol={{ offset: 8, span: 16 }}
                   >
-                    <Text>Don't have an account yet?</Text>{' '}
+                    <Text>Don&apos;t have an account yet?</Text>{' '}
+                    <Link to="/">Sign up today!</Link>
                   </Form.Item>
-                  <Link to="/">Sign up today!</Link>
                 </Form>
               </Col>
             </Row>

@@ -43,6 +43,10 @@
 }
 
 .custom-form {
+  form {
+    width: 450px;
+  }
+
   @media only screen and (max-width: 320px) {
     padding: 25px !important;
     justify-content: center !important;

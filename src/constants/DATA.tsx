@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   MailOutlined,
   LockOutlined,
@@ -11,7 +12,6 @@ export const userColumns = [
     dataIndex: 'name',
     key: 'name',
     sorter: (a: any, b: any) => {
-      console.log(a.name);
       return a.name.length - b.name.length;
     },
     sortDirections: ['descend'],
@@ -150,13 +150,19 @@ export const registerFormData = [
       {
         required: true,
         message: 'Please input your email address!',
+        validateTrigger: 'onSubmit',
+      },
+      {
+        type: 'email',
+        message: 'The input is not valid E-mail!',
+        validateTrigger: 'onSubmit',
       },
     ],
   },
   {
     title: 'Phone Number',
     id: 'phone',
-    type: 'text',
+    type: 'number',
     name: 'phone',
     defaultValue: '',
     errorMessage: 'Please input your phone number!',
@@ -183,10 +189,17 @@ export const registerFormData = [
     // icon: 'LockOutlined',
     icon: <LockOutlined className="register-icon" />,
     rules: [
-      {
-        required: true,
-        message: 'Please input your password!',
-      },
+      ({ getFieldValue }: any) => ({
+        validator() {
+          const re = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+          if (re.test(getFieldValue('password'))) {
+            return Promise.resolve();
+          } else {
+            return Promise.reject(new Error('Invalid Password'));
+          }
+        },
+        validateTrigger: 'onSubmit',
+      }),
     ],
   },
   {
@@ -204,7 +217,17 @@ export const registerFormData = [
       {
         required: true,
         message: 'Please input your password again!',
+        validationTrigger: 'onBlur',
       },
+      ({ getFieldValue }: any) => ({
+        validator(_: any, value: any) {
+          if (!value || getFieldValue('password') === value) {
+            return Promise.resolve();
+          }
+          return Promise.reject(new Error('Passwords do not match!'));
+        },
+        validateTrigger: 'onSubmit',
+      }),
     ],
   },
 ];

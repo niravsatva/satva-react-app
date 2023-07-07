@@ -60,7 +60,7 @@ export default function Register() {
                 sm={24}
                 md={14}
                 lg={14}
-                className="custom-form"
+                className="custom-register-form"
                 style={formStyle}
               >
                 <Form
@@ -79,18 +79,27 @@ export default function Register() {
                     registration
                   </Title>
                   <div className="grid-container">
-                    {registerFormData?.map((item) => {
+                    {registerFormData?.map((item, index) => {
                       return (
-                        <div className="grid-item">
+                        <div className="grid-item" key={index}>
                           <label className="register-form-label">
                             {item?.icon}
                             {item?.title} {item?.required && '*'}
                           </label>
-                          <Form.Item name={item?.name} rules={item?.rules}>
+                          <Form.Item
+                            name={item?.name}
+                            rules={item?.rules as []}
+                          >
                             {item?.type == 'password' ? (
                               <Input.Password
                                 placeholder={item?.placeholder}
                                 size="large"
+                              />
+                            ) : item?.type == 'number' ? (
+                              <Input
+                                placeholder={item?.placeholder}
+                                size="large"
+                                type="number"
                               />
                             ) : (
                               <Input
@@ -102,124 +111,6 @@ export default function Register() {
                         </div>
                       );
                     })}
-
-                    {/* <div className="grid-item">
-                      <label className="register-form-label">
-                        <UserOutlined className="register-icon" />
-                        First Name *
-                      </label>
-                      <Form.Item
-                        name="first_name"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your first name!',
-                          },
-                        ]}
-                      >
-                        <Input
-                          placeholder="Enter your First Name"
-                          size="large"
-                        />
-                      </Form.Item>
-                    </div>
-                    <div className="grid-item">
-                      <label className="register-form-label">
-                        <UserOutlined className="register-icon" />
-                        Last Name *
-                      </label>
-                      <Form.Item
-                        name="last_name"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your last name!',
-                          },
-                        ]}
-                      >
-                        <Input
-                          placeholder="Enter your Last Name"
-                          size="large"
-                        />
-                      </Form.Item>
-                    </div>
-                    <div className="grid-item">
-                      <label className="register-form-label">
-                        <MailOutlined className="register-icon" />
-                        Email Address *
-                      </label>
-                      <Form.Item
-                        name="email"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your email address!',
-                          },
-                        ]}
-                      >
-                        <Input
-                          placeholder="Enter your email address"
-                          size="large"
-                        />
-                      </Form.Item>
-                    </div>
-                    <div className="grid-item">
-                      <label className="register-form-label">
-                        <PhoneOutlined className="register-icon" />
-                        Phone Number *
-                      </label>
-                      <Form.Item
-                        name="phone"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your phone number!',
-                          },
-                        ]}
-                      >
-                        <Input
-                          placeholder="Enter your Phone Number"
-                          size="large"
-                        />
-                      </Form.Item>
-                    </div>
-                    <div className="grid-item">
-                      <label className="register-form-label">
-                        <LockOutlined className="register-icon" />
-                        Password *
-                      </label>
-                      <Form.Item
-                        name="password"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your password!',
-                          },
-                        ]}
-                      >
-                        <Input placeholder="Enter your Password" size="large" />
-                      </Form.Item>
-                    </div>
-                    <div className="grid-item">
-                      <label className="register-form-label">
-                        <LockOutlined className="register-icon" />
-                        Re Enter Password *
-                      </label>
-                      <Form.Item
-                        name="confirm_password"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your password again!',
-                          },
-                        ]}
-                      >
-                        <Input
-                          placeholder="Re Enter your Password"
-                          size="large"
-                        />
-                      </Form.Item>
-                    </div> */}
                   </div>
 
                   <Form.Item>
@@ -250,7 +141,7 @@ export default function Register() {
                     valuePropName="checked"
                     // wrapperCol={{ offset: 8, span: 16 }}
                   >
-                    <Text>Don't have an account yet?</Text>{' '}
+                    <Text>Don&apos;t have an account yet?</Text>{' '}
                     <Link to="/login">Login Now!</Link>
                   </Form.Item>
                 </Form>
